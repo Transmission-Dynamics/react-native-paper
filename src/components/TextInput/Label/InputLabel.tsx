@@ -114,7 +114,7 @@ const InputLabel = (props: InputLabelProps) => {
         labelTranslationX,
       ]}
     >
-      {labelBackground?.({
+      {/* {labelBackground?.({
         labeled,
         labelLayoutWidth,
         labelStyle,
@@ -127,6 +127,7 @@ const InputLabel = (props: InputLabelProps) => {
         maxFontSizeMultiplier: maxFontSizeMultiplier,
         testID,
       })}
+      })} */}
       <AnimatedText
         variant="bodySmall"
         onLayout={onLayoutAnimatedText}
