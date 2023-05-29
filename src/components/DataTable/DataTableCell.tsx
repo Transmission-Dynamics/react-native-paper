@@ -29,6 +29,10 @@ export type Props = $RemoveChildren<typeof TouchableRipple> & {
    * Text content style of the `DataTableCell`.
    */
   textStyle?: StyleProp<TextStyle>;
+  /**
+   * Specifies the largest possible scale a text font can reach.
+   */
+  maxFontSizeMultiplier?: number;
 };
 
 /**
@@ -62,7 +66,7 @@ const DataTableCell = ({
   textStyle,
   style,
   numeric,
-  maxFontSizeMultiplier,
+  maxFontSizeMultiplier = 1.5,
   ...rest
 }: Props) => (
   <TouchableRipple

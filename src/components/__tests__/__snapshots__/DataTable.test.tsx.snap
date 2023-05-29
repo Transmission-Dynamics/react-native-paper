@@ -47,6 +47,7 @@ exports[`renders data table cell 1`] = `
   }
 >
   <Text
+    maxFontSizeMultiplier={1.5}
     numberOfLines={1}
     style={
       [
@@ -120,6 +121,7 @@ exports[`renders data table header 1`] = `
     }
   >
     <Text
+      maxFontSizeMultiplier={1.5}
       numberOfLines={1}
       style={
         [
@@ -190,6 +192,7 @@ exports[`renders data table header 1`] = `
     }
   >
     <Text
+      maxFontSizeMultiplier={1.5}
       numberOfLines={1}
       style={
         [
@@ -1758,6 +1761,7 @@ exports[`renders data table pagination with options select 1`] = `
                 </Text>
               </View>
               <Text
+                maxFontSizeMultiplier={1.5}
                 numberOfLines={1}
                 selectable={false}
                 style={
@@ -2512,6 +2516,7 @@ exports[`renders data table title with press handler 1`] = `
     </Text>
   </View>
   <Text
+    maxFontSizeMultiplier={1.5}
     numberOfLines={1}
     style={
       [
@@ -2636,6 +2641,7 @@ exports[`renders data table title with sort icon 1`] = `
     </Text>
   </View>
   <Text
+    maxFontSizeMultiplier={1.5}
     numberOfLines={1}
     style={
       [
@@ -2724,6 +2730,7 @@ exports[`renders right aligned data table cell 1`] = `
   }
 >
   <Text
+    maxFontSizeMultiplier={1.5}
     numberOfLines={1}
     style={
       [
@@ -2784,6 +2791,7 @@ exports[`renders right aligned data table title 1`] = `
   }
 >
   <Text
+    maxFontSizeMultiplier={1.5}
     numberOfLines={1}
     style={
       [
