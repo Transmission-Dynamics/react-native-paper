@@ -66,7 +66,7 @@ const DataTableCell = ({
   textStyle,
   style,
   numeric,
-  maxFontSizeMultiplier = 1.5,
+  maxFontSizeMultiplier,
   ...rest
 }: Props) => (
   <TouchableRipple
