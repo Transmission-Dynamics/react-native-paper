@@ -81,6 +81,7 @@ export type Props = {
   density?: 'regular' | 'small' | 'medium' | 'high';
   style?: StyleProp<ViewStyle>;
   theme?: ThemeProp;
+  adjustsFontSizeToFit?: boolean;
 } & ConditionalValue;
 
 /**
@@ -134,6 +135,7 @@ const SegmentedButtons = ({
   density,
   style,
   theme: themeOverrides,
+  adjustsFontSizeToFit,
 }: Props) => {
   const theme = useInternalTheme(themeOverrides);
 
@@ -178,6 +180,7 @@ const SegmentedButtons = ({
             style={[item.style, disabledChildStyle]}
             labelStyle={item.labelStyle}
             theme={theme}
+            adjustsFontSizeToFit={adjustsFontSizeToFit}
           />
         );
       })}

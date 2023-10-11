@@ -65,6 +65,7 @@ export declare type Props = {
     density?: 'regular' | 'small' | 'medium' | 'high';
     style?: StyleProp<ViewStyle>;
     theme?: ThemeProp;
+    adjustsFontSizeToFit?: boolean;
 } & ConditionalValue;
 /**
  * Segmented buttons can be used to select options, switch views or sort elements.</br>
@@ -109,7 +110,7 @@ export declare type Props = {
  * export default MyComponent;
  *```
  */
-declare const SegmentedButtons: ({ value, onValueChange, buttons, multiSelect, density, style, theme: themeOverrides, }: Props) => React.JSX.Element;
+declare const SegmentedButtons: ({ value, onValueChange, buttons, multiSelect, density, style, theme: themeOverrides, adjustsFontSizeToFit, }: Props) => React.JSX.Element;
 export default SegmentedButtons;
 export { SegmentedButtons as SegmentedButtons };
 //# sourceMappingURL=SegmentedButtons.d.ts.map

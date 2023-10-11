@@ -70,8 +70,12 @@ export declare type Props = {
      * @optional
      */
     theme?: ThemeProp;
+    /**
+     * Enable "adjustsFontSizeToFit" for text component
+     */
+    adjustsFontSizeToFit?: boolean;
 };
-declare const SegmentedButtonItem: ({ checked, accessibilityLabel, disabled, style, labelStyle, showSelectedCheck, checkedColor, uncheckedColor, rippleColor: customRippleColor, icon, testID, label, onPress, segment, density, theme: themeOverrides, }: Props) => React.JSX.Element;
+declare const SegmentedButtonItem: ({ checked, accessibilityLabel, disabled, style, labelStyle, showSelectedCheck, checkedColor, uncheckedColor, rippleColor: customRippleColor, icon, testID, label, onPress, segment, density, theme: themeOverrides, adjustsFontSizeToFit, }: Props) => React.JSX.Element;
 export default SegmentedButtonItem;
 export { SegmentedButtonItem as SegmentedButton };
 //# sourceMappingURL=SegmentedButtonItem.d.ts.map
