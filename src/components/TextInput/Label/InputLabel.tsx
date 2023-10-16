@@ -106,14 +106,7 @@ const InputLabel = (props: InputLabelProps) => {
     ],
   };
 
-  const commonStyles = [
-    placeholderStyle,
-    {
-      top: topPosition,
-    },
-    labelStyle,
-    paddingOffset || {},
-  ];
+  const commonStyles = [placeholderStyle, labelStyle, paddingOffset || {}];
 
   const textColor = (
     labelError && errorColor ? errorColor : placeholderColor
