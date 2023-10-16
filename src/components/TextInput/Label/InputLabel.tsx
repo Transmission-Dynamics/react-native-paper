@@ -133,9 +133,6 @@ const InputLabel = (props: InputLabelProps) => {
         onTextLayout={onLabelTextLayout}
         style={[
           placeholderStyle,
-          {
-            top: topPosition,
-          },
           labelStyle,
           paddingOffset || {},
           {
@@ -152,9 +149,6 @@ const InputLabel = (props: InputLabelProps) => {
         variant={focused ? 'bodyLarge' : 'bodySmall'}
         style={[
           placeholderStyle,
-          {
-            top: topPosition,
-          },
           labelStyle,
           paddingOffset,
           {
@@ -175,6 +169,7 @@ const InputLabel = (props: InputLabelProps) => {
 const styles = StyleSheet.create({
   labelContainer: {
     zIndex: 3,
+    justifyContent: 'center',
   },
 });
 
