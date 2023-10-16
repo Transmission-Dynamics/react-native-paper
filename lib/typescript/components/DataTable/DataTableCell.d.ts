@@ -20,6 +20,10 @@ export declare type Props = $RemoveChildren<typeof TouchableRipple> & {
      * Text content style of the `DataTableCell`.
      */
     textStyle?: StyleProp<TextStyle>;
+    /**
+     * testID to be used on tests.
+     */
+    testID?: string;
 };
 /**
  * A component to show a single cell inside of a table.
@@ -47,7 +51,7 @@ export declare type Props = $RemoveChildren<typeof TouchableRipple> & {
  * @extends TouchableRipple props https://callstack.github.io/react-native-paper/docs/components/TouchableRipple
  */
 declare const DataTableCell: {
-    ({ children, textStyle, style, numeric, ...rest }: Props): React.JSX.Element;
+    ({ children, textStyle, style, numeric, testID, ...rest }: Props): React.JSX.Element;
     displayName: string;
 };
 export default DataTableCell;

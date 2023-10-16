@@ -105,7 +105,7 @@ declare const DataTable: {
         displayName: string;
     };
     Cell: {
-        ({ children, textStyle, style, numeric, ...rest }: import("./DataTableCell").Props): React.JSX.Element;
+        ({ children, textStyle, style, numeric, testID, ...rest }: import("./DataTableCell").Props): React.JSX.Element;
         displayName: string;
     };
     Pagination: {
