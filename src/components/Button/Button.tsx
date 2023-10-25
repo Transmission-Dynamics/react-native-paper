@@ -15,6 +15,7 @@ import color from 'color';
 import { ButtonMode, getButtonColors } from './utils';
 import { useInternalTheme } from '../../core/theming';
 import type { $Omit, ThemeProp } from '../../types';
+import { forwardRef } from '../../utils/forwardRef';
 import hasTouchHandler from '../../utils/hasTouchHandler';
 import { splitStyles } from '../../utils/splitStyles';
 import ActivityIndicator from '../ActivityIndicator';
@@ -113,6 +114,10 @@ export type Props = $Omit<React.ComponentProps<typeof Surface>, 'mode'> & {
    * Use this prop to apply custom height and width and to set the icon on the right with `flexDirection: 'row-reverse'`.
    */
   contentStyle?: StyleProp<ViewStyle>;
+  /**
+   * Specifies the largest possible scale a text font can reach.
+   */
+  maxFontSizeMultiplier?: number;
   style?: Animated.WithAnimatedValue<StyleProp<ViewStyle>>;
   /**
    * Style for the button text.
@@ -149,34 +154,39 @@ export type Props = $Omit<React.ComponentProps<typeof Surface>, 'mode'> & {
  * export default MyComponent;
  * ```
  */
-const Button = ({
-  disabled,
-  compact,
-  mode = 'text',
-  dark,
-  loading,
-  icon,
-  buttonColor: customButtonColor,
-  textColor: customTextColor,
-  rippleColor: customRippleColor,
-  children,
-  accessibilityLabel,
-  accessibilityHint,
-  onPress,
-  onPressIn,
-  onPressOut,
-  onLongPress,
-  delayLongPress,
-  style,
-  theme: themeOverrides,
-  uppercase: uppercaseProp,
-  contentStyle,
-  labelStyle,
-  testID = 'button',
-  accessible,
-  adjustsFontSizeToFit,
-  ...rest
-}: Props) => {
+
+const Button = (
+  {
+    disabled,
+    compact,
+    mode = 'text',
+    dark,
+    loading,
+    icon,
+    buttonColor: customButtonColor,
+    textColor: customTextColor,
+    rippleColor: customRippleColor,
+    children,
+    accessibilityLabel,
+    accessibilityHint,
+    onPress,
+    onPressIn,
+    onPressOut,
+    onLongPress,
+    delayLongPress,
+    style,
+    theme: themeOverrides,
+    uppercase: uppercaseProp,
+    contentStyle,
+    labelStyle,
+    testID = 'button',
+    accessible,
+    adjustsFontSizeToFit,
+    maxFontSizeMultiplier,
+    ...rest
+  }: Props,
+  ref: React.ForwardedRef<View>
+) => {
   const theme = useInternalTheme(themeOverrides);
   const isMode = React.useCallback(
     (modeToCompare: ButtonMode) => {
@@ -295,6 +305,7 @@ const Button = ({
   return (
     <Surface
       {...rest}
+      ref={ref}
       testID={`${testID}-container`}
       style={
         [
@@ -370,6 +381,7 @@ const Button = ({
               labelStyle,
             ]}
             adjustsFontSizeToFit={adjustsFontSizeToFit}
+            maxFontSizeMultiplier={maxFontSizeMultiplier}
           >
             {children}
           </Text>
@@ -460,4 +472,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Button;
+export default forwardRef(Button);
