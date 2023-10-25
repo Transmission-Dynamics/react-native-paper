@@ -21,6 +21,10 @@ export declare type Props = $RemoveChildren<typeof TouchableRipple> & {
      */
     textStyle?: StyleProp<TextStyle>;
     /**
+     * Specifies the largest possible scale a text font can reach.
+     */
+    maxFontSizeMultiplier?: number;
+    /**
      * testID to be used on tests.
      */
     testID?: string;
@@ -51,7 +55,7 @@ export declare type Props = $RemoveChildren<typeof TouchableRipple> & {
  * @extends TouchableRipple props https://callstack.github.io/react-native-paper/docs/components/TouchableRipple
  */
 declare const DataTableCell: {
-    ({ children, textStyle, style, numeric, testID, ...rest }: Props): React.JSX.Element;
+    ({ children, textStyle, style, numeric, maxFontSizeMultiplier, testID, ...rest }: Props): React.JSX.Element;
     displayName: string;
 };
 export default DataTableCell;
