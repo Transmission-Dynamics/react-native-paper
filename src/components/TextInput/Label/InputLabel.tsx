@@ -47,6 +47,7 @@ const InputLabel = (props: InputLabelProps) => {
     maxFontSizeMultiplier,
     testID,
     isV3,
+    inputContainerLayout,
   } = props;
 
   const { INPUT_PADDING_HORIZONTAL } = getConstants(isV3);
@@ -109,13 +110,19 @@ const InputLabel = (props: InputLabelProps) => {
     ],
   };
 
-  const commonStyles = [placeholderStyle, labelStyle, paddingOffset || {}];
+  const commonStyles = [
+    placeholderStyle,
+    {
+      top: topPosition,
+      maxWidth: inputContainerLayout.width + INPUT_PADDING_HORIZONTAL / 2,
+    },
+    labelStyle,
+    paddingOffset || {},
+  ];
 
   const textColor = (
     labelError && errorColor ? errorColor : placeholderColor
   ) as ColorValue;
-
-  const maxWidth = width - INPUT_PADDING_HORIZONTAL;
 
   return (
     // Position colored placeholder and gray placeholder on top of each other and crossfade them
@@ -166,7 +173,6 @@ const InputLabel = (props: InputLabelProps) => {
           {
             color: textColor,
             opacity: placeholderOpacity,
-            maxWidth,
           },
         ]}
         numberOfLines={1}

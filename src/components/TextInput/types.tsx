@@ -76,6 +76,7 @@ export type State = {
   labelLayout: { measured: boolean; width: number; height: number };
   leftLayout: { height: number | null; width: number | null };
   rightLayout: { height: number | null; width: number | null };
+  inputContainerLayout: { width: number };
   contentStyle?: StyleProp<ViewProps>;
 };
 export type ChildTextInputProps = {
@@ -85,6 +86,7 @@ export type ChildTextInputProps = {
   onBlur?: (args: any) => void;
   forceFocus: () => void;
   onChangeText?: (value: string) => void;
+  onInputLayout: (event: LayoutChangeEvent) => void;
   onLayoutAnimatedText: (args: any) => void;
   onLabelTextLayout: (event: NativeSyntheticEvent<TextLayoutEventData>) => void;
   onLeftAffixLayoutChange: (event: LayoutChangeEvent) => void;
@@ -133,6 +135,7 @@ export type InputLabelProps = {
   opacity: number;
   labelLayoutMeasured: boolean;
   labelLayoutWidth: number;
+  inputContainerLayout: { width: number };
   labelBackground?: any;
   maxFontSizeMultiplier?: number | undefined | null;
   isV3?: boolean;
