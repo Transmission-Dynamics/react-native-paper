@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { GestureResponderEvent, StyleProp, TextStyle, ViewStyle } from 'react-native';
+import { ColorValue, GestureResponderEvent, StyleProp, TextStyle, ViewStyle } from 'react-native';
 import type { ThemeProp, MD3TypescaleKey } from '../../types';
 export declare type Props = {
     /**
@@ -30,6 +30,10 @@ export declare type Props = {
      * Custom color for radio.
      */
     color?: string;
+    /**
+     * Color of the ripple effect.
+     */
+    rippleColor?: ColorValue;
     /**
      * Status of radio button.
      */
@@ -104,7 +108,7 @@ export declare type Props = {
  *```
  */
 declare const RadioButtonItem: {
-    ({ value, label, style, labelStyle, onPress, disabled, color, uncheckedColor, status, theme: themeOverrides, accessibilityLabel, testID, mode, position, labelVariant, labelMaxFontSizeMultiplier, }: Props): React.JSX.Element;
+    ({ value, label, style, labelStyle, onPress, disabled, color, uncheckedColor, rippleColor, status, theme: themeOverrides, accessibilityLabel, testID, mode, position, labelVariant, labelMaxFontSizeMultiplier, }: Props): React.JSX.Element;
     displayName: string;
 };
 export default RadioButtonItem;
