@@ -19,6 +19,10 @@ export declare type Props = {
      */
     onPress?: (e: GestureResponderEvent) => void;
     /**
+     * Function to execute on long press.
+     */
+    onLongPress?: (e: GestureResponderEvent) => void;
+    /**
      * Accessibility label for the touchable. This is read by the screen reader when the user taps the touchable.
      */
     accessibilityLabel?: string;
@@ -100,7 +104,7 @@ export declare type Props = {
  *```
  */
 declare const CheckboxItem: {
-    ({ style, status, label, onPress, labelStyle, theme: themeOverrides, testID, mode, position, accessibilityLabel, disabled, labelVariant, labelMaxFontSizeMultiplier, rippleColor, ...props }: Props): React.JSX.Element;
+    ({ style, status, label, onPress, onLongPress, labelStyle, theme: themeOverrides, testID, mode, position, accessibilityLabel, disabled, labelVariant, labelMaxFontSizeMultiplier, rippleColor, ...props }: Props): React.JSX.Element;
     displayName: string;
 };
 export default CheckboxItem;

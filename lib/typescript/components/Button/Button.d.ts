@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Animated, ColorValue, GestureResponderEvent, StyleProp, TextStyle, View, ViewStyle } from 'react-native';
+import { AccessibilityRole, Animated, ColorValue, GestureResponderEvent, StyleProp, TextStyle, View, ViewStyle } from 'react-native';
 import type { $Omit, ThemeProp } from '../../types';
 import { IconSource } from '../Icon';
 import Surface from '../Surface';
@@ -68,6 +68,10 @@ export declare type Props = $Omit<React.ComponentProps<typeof Surface>, 'mode'> 
      * Accessibility hint for the button. This is read by the screen reader when the user taps the button.
      */
     accessibilityHint?: string;
+    /**
+     * Accessibility role for the button. The "button" role is set by default.
+     */
+    accessibilityRole?: AccessibilityRole;
     /**
      * Function to execute on press.
      */
