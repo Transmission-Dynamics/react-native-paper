@@ -382,7 +382,8 @@ it("correctly applies theme background to label when input's background is trans
   });
 });
 
-it('always applies line height, even if not specified', () => {
+it('always applies line height for web, even if not specified', () => {
+  Platform.OS = 'web';
   const { getByTestId } = render(
     <View>
       <TextInput
@@ -446,10 +447,31 @@ it('always applies line height, even if not specified', () => {
   expect(getByTestId('large-font')).toHaveStyle({ lineHeight: 30 * 1.2 });
   expect(getByTestId('large-font-flat')).toHaveStyle({ lineHeight: 30 * 1.2 });
 
-  expect(getByTestId('custom-line-height')).toHaveStyle({ lineHeight: 29 });
+  expect(getByTestId('custom-line-height')).toHaveStyle({
+    lineHeight: 29,
+  });
   expect(getByTestId('custom-line-height-flat')).toHaveStyle({
     lineHeight: 29,
   });
+});
+
+it('call onPress when affix adornment pressed', () => {
+  const affixOnPress = jest.fn();
+  const affixTextValue = '+39';
+  const { getByText, toJSON } = render(
+    <TextInput
+      label="Flat input"
+      placeholder="Enter your phone number"
+      value={''}
+      left={<TextInput.Affix text="+39" onPress={affixOnPress} />}
+    />
+  );
+
+  fireEvent.press(getByText(affixTextValue));
+
+  expect(getByText(affixTextValue)).toBeTruthy();
+  expect(toJSON()).toMatchSnapshot();
+  expect(affixOnPress).toHaveBeenCalledTimes(1);
 });
 
 describe('maxFontSizeMultiplier', () => {
@@ -538,7 +560,7 @@ describe('getFlatInputColor - underline color', () => {
         theme: getTheme(),
       })
     ).toMatchObject({
-      underlineColorCustom: getTheme().colors.onSurface,
+      underlineColorCustom: getTheme().colors.onSurfaceVariant,
     });
   });
 
@@ -625,7 +647,7 @@ describe('getFlatInputColor - input text color', () => {
         theme: getTheme(),
       })
     ).toMatchObject({
-      inputTextColor: getTheme().colors.onSurfaceVariant,
+      inputTextColor: getTheme().colors.onSurface,
     });
   });
 
