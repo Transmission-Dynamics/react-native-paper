@@ -121,7 +121,7 @@ export declare const ELEVATION_LEVELS_MAP: ElevationLevels[];
  */
 declare class Menu extends React.Component<Props, State> {
     static Item: {
-        ({ leadingIcon, trailingIcon, dense, title, disabled, onPress, style, contentStyle, titleStyle, rippleColor: customRippleColor, testID, accessibilityLabel, accessibilityState, theme: themeOverrides, titleMaxFontSizeMultiplier, }: import("./MenuItem").Props): React.JSX.Element;
+        ({ leadingIcon, trailingIcon, dense, title, disabled, background, onPress, style, contentStyle, titleStyle, rippleColor: customRippleColor, testID, accessibilityLabel, accessibilityState, theme: themeOverrides, titleMaxFontSizeMultiplier, }: import("./MenuItem").Props): React.JSX.Element;
         displayName: string;
     };
     static defaultProps: {

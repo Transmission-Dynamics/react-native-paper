@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ColorValue, GestureResponderEvent, StyleProp, TextStyle, ViewStyle } from 'react-native';
+import { ColorValue, GestureResponderEvent, PressableAndroidRippleConfig, StyleProp, TextStyle, ViewStyle } from 'react-native';
 import type { ThemeProp, MD3TypescaleKey } from '../../types';
 export declare type Props = {
     /**
@@ -14,6 +14,11 @@ export declare type Props = {
      * Whether radio is disabled.
      */
     disabled?: boolean;
+    /**
+     * Type of background drawabale to display the feedback (Android).
+     * https://reactnative.dev/docs/pressable#rippleconfig
+     */
+    background?: PressableAndroidRippleConfig;
     /**
      * Function to execute on press.
      */
@@ -112,7 +117,7 @@ export declare type Props = {
  *```
  */
 declare const RadioButtonItem: {
-    ({ value, label, style, labelStyle, onPress, onLongPress, disabled, color, uncheckedColor, rippleColor, status, theme: themeOverrides, accessibilityLabel, testID, mode, position, labelVariant, labelMaxFontSizeMultiplier, }: Props): React.JSX.Element;
+    ({ value, label, style, labelStyle, onPress, onLongPress, disabled, color, uncheckedColor, rippleColor, status, theme: themeOverrides, background, accessibilityLabel, testID, mode, position, labelVariant, labelMaxFontSizeMultiplier, }: Props): React.JSX.Element;
     displayName: string;
 };
 export default RadioButtonItem;

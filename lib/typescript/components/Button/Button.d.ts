@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { AccessibilityRole, Animated, ColorValue, GestureResponderEvent, StyleProp, TextStyle, View, ViewStyle } from 'react-native';
+import { AccessibilityRole, Animated, ColorValue, GestureResponderEvent, PressableAndroidRippleConfig, StyleProp, TextStyle, View, ViewStyle } from 'react-native';
 import type { $Omit, ThemeProp } from '../../types';
 import { IconSource } from '../Icon';
 import Surface from '../Surface';
@@ -60,6 +60,11 @@ export declare type Props = $Omit<React.ComponentProps<typeof Surface>, 'mode'> 
      * Make the label text uppercased. Note that this won't work if you pass React elements as children.
      */
     uppercase?: boolean;
+    /**
+     * Type of background drawabale to display the feedback (Android).
+     * https://reactnative.dev/docs/pressable#rippleconfig
+     */
+    background?: PressableAndroidRippleConfig;
     /**
      * Accessibility label for the button. This is read by the screen reader when the user taps the button.
      */
