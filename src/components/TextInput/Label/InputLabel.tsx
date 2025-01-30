@@ -120,9 +120,6 @@ const InputLabel = (props: InputLabelProps) => {
   const commonStyles = [
     placeholderStyle,
     {
-      top: topPosition,
-    },
-    {
       maxWidth: labelWidth,
     },
     labelStyle,
@@ -212,6 +209,7 @@ const styles = StyleSheet.create({
   },
   labelContainer: {
     zIndex: 3,
+    justifyContent: 'center',
   },
 });
 
