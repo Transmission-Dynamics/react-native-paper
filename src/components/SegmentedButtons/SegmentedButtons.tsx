@@ -60,6 +60,7 @@ export type Props<T extends string = string> = {
    * - `showSelectedCheck`: show optional check icon to indicate selected state
    * - `style`: pass additional styles for the button
    * - `testID`: testID to be used on tests
+   * - `adjustsFontSizeToFit`: Enable "adjustsFontSizeToFit" for text component
    */
   buttons: {
     value: T;
@@ -81,6 +82,7 @@ export type Props<T extends string = string> = {
   density?: 'regular' | 'small' | 'medium' | 'high';
   style?: StyleProp<ViewStyle>;
   theme?: ThemeProp;
+  adjustsFontSizeToFit?: boolean;
 } & ConditionalValue<T>;
 
 /**
@@ -134,6 +136,7 @@ const SegmentedButtons = <T extends string = string>({
   density,
   style,
   theme: themeOverrides,
+  adjustsFontSizeToFit,
 }: Props<T>) => {
   const theme = useInternalTheme(themeOverrides);
 
@@ -178,6 +181,7 @@ const SegmentedButtons = <T extends string = string>({
             style={[item.style, disabledChildStyle]}
             labelStyle={item.labelStyle}
             theme={theme}
+            adjustsFontSizeToFit={adjustsFontSizeToFit}
           />
         );
       })}
