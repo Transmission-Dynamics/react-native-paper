@@ -220,14 +220,13 @@ const TextInputFlat = ({
   const baseLabelTranslateY =
     -labelHalfHeight - (topPosition + MINIMIZED_LABEL_Y_OFFSET);
 
-  const { current: placeholderOpacityAnims } = React.useRef([
-    new Animated.Value(0),
-    new Animated.Value(1),
-  ]);
+  const { current: placeholderOpacityAnimatedValue } = React.useRef(
+    new Animated.Value(1)
+  );
 
   const placeholderOpacity = hasActiveOutline
     ? parentState.labeled
-    : placeholderOpacityAnims[parentState.labelLayout.measured ? 1 : 0];
+    : placeholderOpacityAnimatedValue;
 
   // We don't want to show placeholder if label is displayed, because they overlap.
   // Before it was done by setting placeholder's value to " ", but inputs have the same props

@@ -191,14 +191,13 @@ const TextInputOutlined = ({
 
   const baseLabelTranslateY = -labelHalfHeight - (topPosition + yOffset);
 
-  const { current: placeholderOpacityAnims } = React.useRef([
-    new Animated.Value(0),
-    new Animated.Value(1),
-  ]);
+  const { current: placeholderOpacityAnimatedValue } = React.useRef(
+    new Animated.Value(1)
+  );
 
   const placeholderOpacity = hasActiveOutline
     ? parentState.labeled
-    : placeholderOpacityAnims[parentState.labelLayout.measured ? 1 : 0];
+    : placeholderOpacityAnimatedValue;
 
   const placeholderStyle = {
     position: 'absolute',
