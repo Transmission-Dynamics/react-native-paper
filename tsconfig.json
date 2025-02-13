@@ -2,10 +2,10 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "react-native-paper": [
+      "@transmission-dynamics/react-native-paper": [
         "./src/index"
       ],
-      "react-native-paper/react-navigation": [
+      "@transmission-dynamics/react-native-paper/react-navigation": [
         "./src/react-navigation"
       ]
     },
