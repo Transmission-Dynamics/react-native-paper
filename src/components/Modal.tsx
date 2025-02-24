@@ -7,6 +7,8 @@ import {
   Pressable,
   View,
   ViewStyle,
+  KeyboardAvoidingView,
+  Platform,
 } from 'react-native';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -215,13 +217,27 @@ function Modal({
         pointerEvents="box-none"
         testID={`${testID}-wrapper`}
       >
-        <Surface
-          testID={`${testID}-surface`}
-          theme={theme}
-          style={[{ opacity }, styles.content, contentContainerStyle]}
+        {/* NOTE:
+         * On iOS the modal does not avoid keyboard by default
+         * and it turned out to be difficult to apply KeyboardAvoidingView
+         * in the app implementation itself.
+         * Patch from:
+         * https://github.com/callstack/react-native-paper/issues/4218#issuecomment-2303273977
+         */}
+        <KeyboardAvoidingView
+          testID={`${testID}-keyboard-avoiding-view`}
+          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          keyboardVerticalOffset={100}
+          style={styles.keyboardAvoidingView}
         >
-          {children}
-        </Surface>
+          <Surface
+            testID={`${testID}-surface`}
+            theme={theme}
+            style={[{ opacity }, styles.content, contentContainerStyle]}
+          >
+            {children}
+          </Surface>
+        </KeyboardAvoidingView>
       </View>
     </Animated.View>
   );
@@ -240,6 +256,12 @@ const styles = StyleSheet.create({
   // eslint-disable-next-line react-native/no-color-literals
   content: {
     backgroundColor: 'transparent',
+    justifyContent: 'center',
+  },
+  keyboardAvoidingView: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'stretch',
     justifyContent: 'center',
   },
 });
