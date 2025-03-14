@@ -1,6 +1,6 @@
 {
   "name": "@transmission-dynamics/react-native-paper",
-  "version": "5.13.1-td.1.0.2",
+  "version": "5.13.1-td.1.0.3",
   "description": "Material design for React Native",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
