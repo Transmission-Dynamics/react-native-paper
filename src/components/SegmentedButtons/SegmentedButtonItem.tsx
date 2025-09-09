@@ -108,6 +108,10 @@ export type Props = {
    * @optional
    */
   theme?: ThemeProp;
+  /**
+   * Enable "adjustsFontSizeToFit" for text component
+   */
+  adjustsFontSizeToFit?: boolean;
 };
 
 const SegmentedButtonItem = ({
@@ -130,6 +134,7 @@ const SegmentedButtonItem = ({
   theme: themeOverrides,
   labelMaxFontSizeMultiplier,
   hitSlop,
+  adjustsFontSizeToFit,
 }: Props) => {
   const theme = useInternalTheme(themeOverrides);
 
@@ -246,6 +251,7 @@ const SegmentedButtonItem = ({
             selectable={false}
             numberOfLines={1}
             maxFontSizeMultiplier={labelMaxFontSizeMultiplier}
+            adjustsFontSizeToFit={adjustsFontSizeToFit}
             testID={`${testID}-label`}
           >
             {label}

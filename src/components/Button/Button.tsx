@@ -157,6 +157,10 @@ export type Props = $Omit<React.ComponentProps<typeof Surface>, 'mode'> & {
    * testID to be used on tests.
    */
   testID?: string;
+  /**
+   * Enable "adjustsFontSizeToFit" for text component
+   */
+  adjustsFontSizeToFit?: boolean;
 };
 
 /**
@@ -207,6 +211,7 @@ const Button = (
     background,
     maxFontSizeMultiplier,
     touchableRef,
+    adjustsFontSizeToFit,
     ...rest
   }: Props,
   ref: React.ForwardedRef<View>
@@ -418,6 +423,7 @@ const Button = (
               labelStyle,
             ]}
             maxFontSizeMultiplier={maxFontSizeMultiplier}
+            adjustsFontSizeToFit={adjustsFontSizeToFit}
           >
             {children}
           </Text>
