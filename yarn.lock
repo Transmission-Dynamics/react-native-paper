@@ -6370,7 +6370,7 @@ dns-packet@^5.2.2:
   dependencies:
     "@leichtgewicht/ip-codec" "^2.0.1"
 
-"docs@file:/Users/milosz/TD/react-native-paper/docs":
+"docs@file:/Users/td-milosz/UltrasonicApp/react-native-paper/docs":
   version "0.0.0"
   resolved "file:docs"
   dependencies:
@@ -12034,7 +12034,7 @@ react-native-monorepo-config@^0.1.6:
     escape-string-regexp "^5.0.0"
     fast-glob "^3.3.3"
 
-"react-native-paper-example@file:/Users/milosz/TD/react-native-paper/example":
+"react-native-paper-example@file:/Users/td-milosz/UltrasonicApp/react-native-paper/example":
   version "0.0.1"
   resolved "file:example"
   dependencies:
