@@ -34,6 +34,10 @@ export type Props = $RemoveChildren<typeof TouchableRipple> & {
    */
   maxFontSizeMultiplier?: number;
   /**
+   * Specifies the largest possible number of lines a text can be split into.
+   */
+  numberOfLines?: number;
+  /**
    * testID to be used on tests.
    */
   testID?: string;
@@ -70,6 +74,7 @@ const DataTableCell = ({
   style,
   numeric,
   maxFontSizeMultiplier,
+  numberOfLines,
   testID,
   ...rest
 }: Props) => {
@@ -83,6 +88,7 @@ const DataTableCell = ({
         textStyle={textStyle}
         testID={testID}
         maxFontSizeMultiplier={maxFontSizeMultiplier}
+        numberOfLines={numberOfLines}
       >
         {children}
       </CellContent>
@@ -94,10 +100,15 @@ const CellContent = ({
   children,
   textStyle,
   maxFontSizeMultiplier,
+  numberOfLines,
   testID,
 }: Pick<
   Props,
-  'children' | 'textStyle' | 'testID' | 'maxFontSizeMultiplier'
+  | 'children'
+  | 'textStyle'
+  | 'testID'
+  | 'maxFontSizeMultiplier'
+  | 'numberOfLines'
 >) => {
   if (React.isValidElement(children)) {
     return children;
@@ -106,7 +117,7 @@ const CellContent = ({
   return (
     <Text
       style={textStyle}
-      numberOfLines={1}
+      numberOfLines={numberOfLines ?? 1}
       maxFontSizeMultiplier={maxFontSizeMultiplier}
       testID={`${testID}-text-container`}
     >
