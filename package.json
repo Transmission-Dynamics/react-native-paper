@@ -1,5 +1,5 @@
 {
-  "name": "react-native-paper",
+  "name": "@transmission-dynamics/react-native-paper",
   "version": "5.14.5",
   "description": "Material design for React Native",
   "main": "lib/commonjs/index.js",
@@ -46,9 +46,6 @@
     "release": "release-it",
     "docs": "yarn --cwd docs",
     "example": "yarn --cwd example"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
     "@callstack/react-theme-provider": "^3.0.9",
