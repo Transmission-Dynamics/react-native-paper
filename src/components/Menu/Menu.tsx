@@ -359,11 +359,12 @@ const Menu = ({
         easing: EASING,
         useNativeDriver: true,
       }),
-    ]).start(({ finished }) => {
-      if (finished) {
-        focusFirstDOMNode(menuRef.current);
-        prevRendered.current = true;
-      }
+      // NOTE:
+      // Fix for Menu opening only once since RN 0.81
+      // Patch taken from: https://github.com/callstack/react-native-paper/issues/4807
+    ]).start(() => {
+      focusFirstDOMNode(menuRef.current);
+      prevRendered.current = true;
     });
   }, [anchor, attachListeners, measureAnchorLayout, theme]);
 
@@ -377,13 +378,14 @@ const Menu = ({
       duration: ANIMATION_DURATION * animation.scale,
       easing: EASING,
       useNativeDriver: true,
-    }).start(({ finished }) => {
-      if (finished) {
-        setMenuLayout({ width: 0, height: 0 });
-        setRendered(false);
-        prevRendered.current = false;
-        focusFirstDOMNode(anchorRef.current);
-      }
+      // NOTE:
+      // Fix for Menu opening only once since RN 0.81
+      // Patch taken from: https://github.com/callstack/react-native-paper/issues/4807
+    }).start(() => {
+      setMenuLayout({ width: 0, height: 0 });
+      setRendered(false);
+      prevRendered.current = false;
+      focusFirstDOMNode(anchorRef.current);
     });
   }, [removeListeners, theme]);
 
